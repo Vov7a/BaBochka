@@ -1,6 +1,6 @@
 import asyncio
 import logging
-import sys
+import sus
 
 from aiogram import Bot, Dispatcher
 
