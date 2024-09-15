@@ -10,7 +10,7 @@ router = Router()
 
 @router.message(CommandStart())
 async def handle_start(message: Message):
-    new_msg = await message.answer('Доброе утро')
+    new_msg = await message.answer('Доброе утро!')
     await message.delete()
     await asyncio.sleep(20)
     try:
