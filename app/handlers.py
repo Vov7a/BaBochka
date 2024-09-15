@@ -14,13 +14,13 @@ async def handle_start(message: Message):
     now = datetime.datetime.now().hour
     
     if now >= 6 and now < 12:
-        new_msg = await message.answer('Доброе утро!', reply_markup=kb.start)
+        new_msg = await message.answer('Доброе утро! 🌅')
     elif now >= 12 and now < 17:
-        new_msg = await message.answer('Добрый день!', reply_markup=kb.start)
+        new_msg = await message.answer('Добрый день! 🕛')
     elif now >= 17 and now < 21:
-        new_msg = await message.answer('Добрый вечер!', reply_markup=kb.start)
+        new_msg = await message.answer('Добрый вечер! 🌇')
     else:
-        new_msg = await message.answer('Доброй ночи!', reply_markup=kb.start)
+        new_msg = await message.answer('Доброй ночи! 🌃')
         
     await message.delete()
     await asyncio.sleep(20)
