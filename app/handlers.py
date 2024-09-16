@@ -3,7 +3,7 @@ import app.keyboards as kb
 import datetime
 
 from aiogram import Router
-from aiogram.filters import CommandStart, Command
+from aiogram.filters import CommandStart, Command, CommandObject
 from aiogram.types import Message
 
 router = Router()
@@ -38,3 +38,8 @@ async def handle_sites(message: Message):
         await new_msg.delete()
     except Exception as e:
         pass
+    
+@router.message(Command('prefix'))
+async def handle_prefix(message: Message, command: CommandObject):
+    args = command.args
+    await message.chat.set_administrator_custom_title(user_id=message.from_user.id, custom_title='Крутой')
